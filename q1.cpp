@@ -11,10 +11,17 @@ int main(){
 	}
 
 	int sum = 0;
-	int st_idx=0;
-	int end_idx=0;
-	for(vector<int>::size_type i = 0; i<v.size(); i++){
-		sum += vector[i];
+	int max = v[0];
 
+	for(vector<int>::size_type i = 0; i<v.size(); i++){
+		if(sum>0)
+			sum += v[i];
+		else
+			sum = v[i];
+
+		if(max<sum)
+			max=sum;
+	}
+	cout<<max<<endl;
 
 }
